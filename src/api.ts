@@ -1,5 +1,10 @@
 export async function loadPosts() {
-  const response = await fetch("https://json-placeholder.mock.beeceptor.com/posts")
-  const data = await response.json()
-  return data
+  try {
+    const response = await fetch("https://json-placeholder.mock.beeceptor.com/posts")
+    if (!response.ok) throw new Error("Ошибка при загрузке")
+    return await response.json()
+  } catch (error) {
+    console.error(error)
+    return []
+  }
 }
