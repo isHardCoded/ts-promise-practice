@@ -15,7 +15,6 @@ export function renderPosts() {
       <div id="post">
         <h3>${post.title}</h3>
         <p>${post.body}</p>
-        <span>Link: <a href="${post.link}">Ссылка на пост</a></span>
       </div>
     `
     document.getElementById("list")?.appendChild(li)

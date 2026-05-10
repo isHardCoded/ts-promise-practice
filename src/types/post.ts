@@ -1,8 +1,6 @@
 export type Post = {
-  body: string,
-  comment_count: number,
-  id: number,
-  link: string,
-  title: string,
-  userId: number
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
 }
