@@ -1,7 +1,7 @@
 import { renderPosts } from "./posts"
+import "./styles/index.css";
+import "./styles/reset.css";
 
-document.querySelector("#app")!.innerHTML = `
-    <ul id="list" style="display: flex; flex-direction: column; gap: 10px; list-style:none"></ul>
-  `
+document.querySelector("#app")!.innerHTML = `<ul id="list"></ul>`
 
 renderPosts()

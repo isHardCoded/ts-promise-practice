@@ -1,13 +1,18 @@
 import { loadPosts } from "./api";
-import { type Post } from "./types";
+import { type Post } from "./types/post";
 
 const posts = await loadPosts();
 
 export function renderPosts() {
+  if (posts.length === 0) {
+    console.error("Нет данных")
+    return
+  }
+
   posts.forEach((post: Post) => {
     const li = document.createElement('li')
     li.innerHTML = `
-      <div style="border: 1px solid black; border-radius: 10px; padding: 10px;">
+      <div id="post">
         <h3>${post.title}</h3>
         <p>${post.body}</p>
         <span>Link: <a href="${post.link}">Ссылка на пост</a></span>
